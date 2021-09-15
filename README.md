@@ -12,8 +12,12 @@ Username: admin <br/>
 pass: admin
 
 ## Features:
- - The polls application is extended to a survey where admin can create multiple surveys with multiple questions and choices for each question.
- - The dashboard is enriched with a statistics widget. The widget displays the popular survey among the surveys and the bar chart visualization of vote distributions among different choices for a question.
+  - Admins need to be able to log in to the backend.
+  - Admins should be able to create surveys, together with the survey questions.
+  - The questions need to have 2 options each.
+  - Admins need to be able to access survey reports;
+  - Participants details reports
+  - The public need to be able to access the created surveys and fill out their options.
 
  
 ## Installation and Launching the application
