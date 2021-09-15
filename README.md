@@ -5,7 +5,7 @@
 
 Alex Otieno
 
-### [Checkout the demo application hosted on heroku](https:/herokuapp.com/survey/). 
+### [Checkout the demo application hosted on heroku](https://surveyapp001.herokuapp.com/survey/). 
 
 ### Admin Login
 Username: admin <br/>
