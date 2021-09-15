@@ -6,10 +6,10 @@
 Alex Otieno
 
 ### [Checkout the demo application hosted on heroku](https:/herokuapp.com/survey/). 
-Use admin/admin as credentials to login to admin page.
+
 ### Admin Login
-Username: 
-pass: 
+Username: admin <br/>
+pass: admin
 
 ## Features:
  - The polls application is extended to a survey where admin can create multiple surveys with multiple questions and choices for each question.
@@ -20,8 +20,8 @@ pass:
 
 ### Requirements:
 
-- python version > 3.6 installed
-- django version > 3.1.5 installed
+- python version > 3.9.5 installed
+
 ```cmd
 python -m pip install django
 ```
@@ -65,7 +65,6 @@ Navigate to the project directory (where manage.py is located) and run
  - [chart.js](https://www.chartjs.org/)
 
 
-
-
-
-
+License
+ - MIT License
+ - Copyright © 2020 | Alex Otieno
