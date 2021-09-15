@@ -1,0 +1,1 @@
+web: gunicorn sample_survey.wsgi
