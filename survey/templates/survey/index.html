@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/survey-app.css' %}">
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <title>Survey Application</title>
+</head>
+{% load static %}
+<body id="body">
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light" style="background: #000;">
+          <div class="container">
+            <a class="navbar-brand survey-navbar-link navbar-brand-custom" href="#">Survey  <span class="span-brand-title">System</span></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-mdb-toggle="collapse"
+              data-mdb-target="#navbarExample01"
+              aria-controls="navbarExample01"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+                <ul class="navbar-nav mr-auto ml-5">
+                    {% if partial_view == "about" %}
+                        <li class="nav-item active">
+                            <a class="nav-link survey-navbar-link" href="/survey/about/">About <span class="sr-only">(current)</span></a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link survey-navbar-link" href="/survey/about/">About</a>
+                        </li>
+                    {% endif %}
+                    {% if partial_view == "all_surveys" %}
+                        <li class="nav-item active">
+                            <a class="nav-link survey-navbar-link" href="/survey/all_surveys/">Surveys <span class="sr-only">(current)</span></a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link survey-navbar-link" href="/survey/all_surveys/">Surveys</a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                            <a class="nav-link survey-navbar-link" href="/admin/">Admin Page</a>
+                    </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- Navbar -->
+      
+        
+        <!-- Background image -->
+      </header>
+        {% if partial_view == 'about' %}
+            {% about %}
+        {% endif %}
+        {% if partial_view == 'all_surveys' %}
+            {% all_surveys %}
+        {% endif %}
+        {% if partial_view == 'survey_details' %}
+            {% survey_details pk %}
+        {% endif %}
+        {% if partial_view == 'submit_success' %}
+            {% submit_success %}
+        {% endif %}
+
+</body>
+</html>

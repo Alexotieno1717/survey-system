@@ -1,0 +1,22 @@
+<div class="container">
+  
+<div class="card mt-4" style="background: none;">
+  <h5 class="card-header text-white">Available Surveys</h5>
+  <div class="card-body">
+      <p class="card-text text-white">Participate in as many surveys as you like and help us understand you better!</p>
+      <ul>
+        {% for survey in surveys %}
+            <li class="mt-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <a href="/survey/survey_details/{{survey.id}}">{{survey.name}}</a>
+                    </h5>
+                  </div>
+                </div>
+            </li>
+        {% endfor %}
+      </ul>
+  </div>
+</div>
+</div>

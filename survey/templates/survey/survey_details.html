@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="card survey-form-card mt-3">
+    <div class="card-body">
+        <h2 style="color: #000;">{{survey.name}} Survey</h2>
+        <p class="card-text">Hello! <br> <br>
+          Kindly fill in the survey and submit to participate <br>
+          If you have any concerns, please do not hesitate to reach out to us via email or phone <br>
+          alexotieno900@gmail.com <br>
+          (+254779663469) <br>
+        </p>
+        <form action="/survey/submit_survey/" method="post">
+        {% csrf_token %}
+        {% for question in survey.question_set.all %}
+            <fieldset class="form-group">
+                <legend class="col-form-label col-form-label-custom col-md-12 pt-0">{{question.id}}. {{question.question_text}}</legend>
+                <div class="col-md-12">
+                  {% for choice in question.choice_set.all %}
+                      <div class="form-check form-check-custom">
+                        <input class="form-check-input" type="radio" name="{{question.id}}"
+                               id="{{question.id}}{{choice.id}}" value="choice/{{choice.id}}" aria-describedby="radioHelp">
+                        <label class="form-check-label" for="{{question.id}}{{choice.id}}">
+                          {{choice.choice_text}}
+                        </label>
+                      </div>
+                  {% endfor %}
+                  <small id="radioHelp" class="form-text form-text-custom text-muted">Please select one of the available choices.</small>
+                </div>
+            </fieldset>
+            <hr/>
+        {% endfor %}
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
